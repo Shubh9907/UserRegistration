@@ -53,25 +53,43 @@ public class UserRegistration {
             validEmail(); // Recursively calling validEmail() if the user input is invalid
         }
     }
-
+    /*
+    Method to validate Phone Number
+     */
     public static void phoneNumber(){
         System.out.println("Enter Mobile Number (eg. 91 1234567890)");
         String phoneNumber = sc.nextLine();
         String regex = "^[0-9]{2}[\\s][1-9][0-9]{9}";
-        boolean b = Pattern.matches(regex,phoneNumber);
+        boolean b = Pattern.matches(regex,phoneNumber); // if matches then return true else false
         if (b==true){
             System.out.println("Valid");
         }else {
             System.out.println("Your input is invalid");
-            phoneNumber();
+            phoneNumber(); // recursively calling phoneNumber() if the user input is invalid
+        }
+    }
+    /*
+    Method to validate password entered by user
+     */
+    public static void validatePassword(){
+        System.out.println("Enter password (contains minimum 8 characters)");
+        String pass = sc.nextLine();
+        String regex = "^[a-zA-Z0-9@#$&]{8,}$";
+        boolean b = Pattern.matches(regex, pass); // if matches then return true
+        if (b==true){
+            System.out.println("Valid");
+        }else {
+            System.out.println("Your input is invalid");
+            validatePassword();
         }
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Program");
-//        firstName();
-//        lastName();
+        firstName();
+        lastName();
         validEmail();
-//        phoneNumber();
+        phoneNumber();
+        validatePassword();
     }
 }
