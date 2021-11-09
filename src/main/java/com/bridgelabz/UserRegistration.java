@@ -74,7 +74,7 @@ public class UserRegistration {
     public static void validatePassword(){
         System.out.println("Enter password (contains minimum 8 characters)");
         String pass = sc.nextLine();
-        String regex = "^[a-zA-Z0-9@#$&]{8,}$";
+        String regex = "^[A-Z][a-zA-Z0-9@#$&]{7,}$";
         boolean b = Pattern.matches(regex, pass); // if matches then return true
         if (b==true){
             System.out.println("Valid");
@@ -86,10 +86,10 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Program");
-        firstName();
-        lastName();
-        validEmail();
-        phoneNumber();
+//        firstName();
+//        lastName();
+//        validEmail();
+//        phoneNumber();
         validatePassword();
     }
 }
