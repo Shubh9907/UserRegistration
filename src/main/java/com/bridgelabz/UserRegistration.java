@@ -72,15 +72,15 @@ public class UserRegistration {
     Method to validate password entered by user
      */
     public static void validatePassword(){
-        System.out.println("Enter password (contains minimum 8 characters, combinition of lower, upper case and numbers )");
+        System.out.println("Enter password (contains minimum 8 characters, combination of lower, upper case, numbers and special characters )");
         String pass = sc.nextLine();
-        String regex = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$&*])[A-Za-z0-9@#$&*]{8,}$";
         boolean b = Pattern.matches(regex, pass); // if matches then return true
         if (b==true){
             System.out.println("Valid");
         }else {
             System.out.println("Your input is invalid");
-            validatePassword();
+            validatePassword(); 
         }
     }
 
