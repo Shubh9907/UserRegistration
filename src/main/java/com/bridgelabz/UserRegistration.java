@@ -80,7 +80,7 @@ public class UserRegistration {
             System.out.println("Valid");
         }else {
             System.out.println("Your input is invalid");
-            validatePassword(); 
+            validatePassword(); // Recursively calling validatePassword() if the user input is invalid
         }
     }
 
