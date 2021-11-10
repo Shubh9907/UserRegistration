@@ -13,7 +13,7 @@ public class UserRegistration {
     public static void firstName(){
         System.out.println("Enter first name");
         String firstName = sc.nextLine();
-        String regex="^[A-Z][a-z]{2,}$";
+        String regex="^[A-Z][a-z]{3,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(firstName);
         if (matcher.matches()){
